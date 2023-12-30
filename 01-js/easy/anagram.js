@@ -5,7 +5,19 @@
 */
 
 function isAnagram(str1, str2) {
-
+  const one = String(str1).toLocaleLowerCase;
+  const two = String(str2).toLocaleLowerCase;
+  if (one.length !== two.length) return false;
+  else{
+    for (let a = 0; two.length>a; ++a){
+      if (!(one.includes(two[a]))){
+        return false;
+      }
+    }
+  }
+  return true;
 }
+
+console.log(isAnagram('School MASTER', 'The ClassROOM'));
 
 module.exports = isAnagram;
