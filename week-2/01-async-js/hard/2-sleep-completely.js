@@ -5,10 +5,17 @@ for a given number of milliseconds.
  * the function should return a promise just like before
  */
 
-function sleep(milliseconds) {
+function sleepit(milliseconds) {
     return new Promise((resolve)=>{
-        
+        resolve(milliseconds);
     })
 }
+
+sleepit(2000).then((ms)=>{
+    //-> now we are trying to define the resolve()  function
+    setTimeout(()=>{},ms);
+})
+
+console.log("Hai");
 
 module.exports = sleep;
